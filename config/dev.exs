@@ -3,10 +3,11 @@ import Config
 # Configure your database
 config :testproject, Testproject.Repo,
   username: "postgres",
-  password: "postgres",
+  password: "root",
   hostname: "localhost",
-  database: "testproject_dev",
+  database: "postgres",
   stacktrace: true,
+  port: 5432,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
 
