@@ -13,7 +13,7 @@ defmodule Testproject.Vehicles.Vehicle do
   @doc false
   def changeset(vehicle, attrs) do
     vehicle
-    |> cast(attrs, [:id, :license_plate])
-    |> validate_required([:id, :license_plate])
+    |> cast(attrs, [:id, :license_plate, :status])
+    |> validate_required([:id, :license_plate, :status])
   end
 end
