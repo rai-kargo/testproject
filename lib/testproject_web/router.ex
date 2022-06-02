@@ -19,6 +19,11 @@ defmodule TestprojectWeb.Router do
     resources "/documentss", DocumentController
   end
 
+
+  scope "graphiql" do
+    forward "/", Absinthe.Plug.GraphiQL, schema: TestprojectWeb.Schema
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", TestprojectWeb do
   #   pipe_through :api
