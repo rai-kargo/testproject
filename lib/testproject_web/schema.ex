@@ -31,6 +31,15 @@ defmodule TestprojectWeb.Schema do
     end)
   end
 
+  field :create_vehicle, :vehicle do
+    arg(:input, :vehicle_input )
+    resolve(fn  _entity, %{input: vehicle_params}, _context->
+       Testproject.Vehicles.create_vehicle(vehicle_params)
+    end)
+  end
+
+
+
   end
 
 
@@ -39,6 +48,12 @@ defmodule TestprojectWeb.Schema do
     field :license_plate, :string
     field :status, :string
     end
+
+    input_object :vehicle_input do
+      field :id, :integer
+      field :license_plate, :string
+      field :status, :string
+      end
 
     object :transporter do
       field :id, :integer
